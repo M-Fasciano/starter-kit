@@ -1,0 +1,29 @@
+/*------------------------------------
+    #TOP-LEVEL
+-------------------------------------*/
+
+html {
+	font-size: $base-font-size;
+}
+
+body {
+	background-color: $colour-white;
+	color: $base-text-colour;
+	overflow-x: hidden;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include typographyBody;
+}
+
+
+/* IE11 fix for images */
+.iefix {
+	opacity: 0;
+}
+
+.object-fit {
+	background-size: cover;
+	background-position: center right;
+}
+/* IE11 fix for images */

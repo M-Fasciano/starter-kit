@@ -1,0 +1,48 @@
+/*------------------------------------
+    #SETTINGS: GLOBAL
+-------------------------------------*/
+
+
+// High-level base settings.
+$base-font-size: 16px !default;
+$base-line-height: 30px !default;
+$base-text-colour: #000000 !default;
+$base-letter-spacing: normal;
+
+$line-height: 20px !default;
+
+/**
+ *   These are framework variables.
+ *	 You can use them throughout the project,
+ *   but do not modify or reassign them.
+ */
+$base-spacing-unit: $base-line-height;
+$base-spacing-unit-tiny: round($base-spacing-unit / 4);
+$base-spacing-unit-xsmall: round($base-spacing-unit / 3);
+$base-spacing-unit-small: round($base-spacing-unit / 2);
+$base-spacing-unit-large: round($base-spacing-unit * 2);
+$base-spacing-unit-huge: round($base-spacing-unit * 4);
+
+//	Responsive breakpoints.
+$phablet-width: 670px  !default;
+$tablet-width:  768px  !default;
+$desktop-width: 1024px !default;
+$desktop-medium-width: 1200px !default;
+$desktop-large-width: 1400px !default;
+$desktop-xlarge-width: 1900px !default;
+
+//	Colour palette. Colour names are bassed on
+//  http://chir.ag/projects/name-that-color/
+$colour-white: #ffffff;
+$colour-black: #000000;
+$colour-grey: #999999;
+$colour-light-grey: #f1f1f1;
+$colour-midnight-blue: #002c5f;
+$colour-purple: #292E56;
+$colour-light-blue: #A3E7FE;
+$colour-lilac: #BCB2FF;
+$colour-green: #A3FED9;
+$colour-yellow: #FEE5A3;
+
+
+

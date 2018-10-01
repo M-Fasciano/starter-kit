@@ -1,0 +1,27 @@
+@mixin typographyBody {
+    font-family: $font-hyundai-regular;
+    font-weight: normal;
+    @include font-size(16px, 24px);
+    letter-spacing: $base-letter-spacing;
+}
+
+@mixin typographyHomepageTitle {
+    font-family: $font-hyundai-light;
+	font-weight: normal;
+	@include font-size(34px, 40px);
+    letter-spacing: $base-letter-spacing;
+}
+
+@mixin typographyHomepageTitleCategory {
+    font-family: $font-hyundai-medium;
+	font-weight: normal;
+	@include font-size(30px, 32px);
+    letter-spacing: $base-letter-spacing;
+}
+
+@mixin typographyArticleTitle {
+    font-family: $font-hyundai-medium;
+	font-weight: normal;
+	@include font-size(30px, 32px);
+    letter-spacing: $base-letter-spacing;
+}
