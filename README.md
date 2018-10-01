@@ -13,12 +13,6 @@ npm install
 gulp
 ```
 
-### backend
-
-
-## Deployment setup
-There are no notes on how deployment works yet
-
 ## Authors
 
 * **Michele Fasciano**
