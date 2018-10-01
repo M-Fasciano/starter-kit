@@ -21,4 +21,4 @@ There are no notes on how deployment works yet
 
 ## Authors
 
-* **Michele Fasciano** *Collective London*
+* **Michele Fasciano**
