@@ -1,0 +1,31 @@
+/*------------------------------------
+    #ACCORDION-OBJECT
+-------------------------------------*/
+
+.o-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-hyundai-medium;
+    @include font-size(18px, 22px);
+    cursor: pointer;
+    padding: 15px 0;
+}
+
+.o-accordion-panel {
+    display: none;
+    padding-bottom: 10px;
+}
+
+.o-accordion-icon {
+    @include circle-button;
+
+    @include tablet {
+        display: none;
+    }
+
+    &--selected {
+        &:after {
+            transform: translate(-50%, -45%) scaleY(0);
+        }
+    }
+}

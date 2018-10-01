@@ -1,0 +1,50 @@
+/*------------------------------------
+    #WRAPPER
+-------------------------------------*/
+
+//  Ensure these settings are configured before the @import of this file.
+
+.o-wrapper {
+    background-repeat: no-repeat, no-repeat;
+    background-size: 80%, 80%;
+    background-attachment: fixed;
+    background-position: top 15% right -75%, top 65% left -75%;
+    margin: 60px auto 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    @include tablet {
+        background-position: top -25% right -75%, top 75% left -75%; 
+    }
+
+    @include desktop {
+        background-position: top -150% right -25%, top 300% left -25%;
+        background-size: 65%, 65%;
+    }
+
+    @include desktop-medium {
+        background-position: top 300% right -60%, top -150% left -60%;
+        background-size: 75%, 75%;
+    }
+    
+    @include desktop-xlarge {
+        background-position: top 50% right -60%, top -150% left -60%;
+    }
+
+    &--purple {
+        background-image: url('../images/rectangle-purple.svg'), url('../images/rectangle-purple.svg');
+    }
+
+    &--blue {    
+        background-image: url('../images/rectangle-blue.svg'), url('../images/rectangle-blue.svg');
+    }
+
+    &--yellow {
+        background-image: url('../images/rectangle-yellow.svg'), url('../images/rectangle-yellow.svg');
+    }
+
+    &--green {
+        background-image: url('../images/rectangle.svg'), url('../images/rectangle.svg');
+    }
+}

@@ -1,0 +1,211 @@
+/*------------------------------------
+    #FORMS
+-------------------------------------*/
+
+// Font
+$fh-font-family: inherit !default;
+$fh-font-size-small: $base-font-size !default;
+$fh-font-size: $base-font-size !default;
+$fh-font-color: $base-text-colour !default;
+
+// Borders
+$fh-border: 1px solid #eae5e3 !default;
+$fh-border-focus: 1px solid darken(#eae5e3, 10%) !default;
+$fh-border-radius: 2px !default;
+$fn-border-error: 2px solid darkred !default;
+
+// Inputs, Textareas, Select, Option
+$fh-input-height: 50px !default;
+$fh-input-width: 100% !default;
+$fh-input-bg-color: #fff !default;
+$fh-input-bg-color-focus: darken($fh-input-bg-color, 1.5%) !default;
+$fh-input-padding: rem-calc($base-spacing-unit-small) !default;
+
+/** 
+ * Global Reset Styles
+ */
+input,
+textarea,
+select,
+option,
+optgroup,
+button,
+legend,
+fieldset {
+	color: $fh-font-color;
+	display: block;
+	font-family: $fh-font-family;
+	@include font-size($fh-font-size-small);
+
+	@include tablet {
+		@include font-size($fh-font-size);
+	}
+}
+
+datalist {
+	font-family: $fh-font-family;
+	@include font-size($fh-font-size-small);
+
+	@include tablet {
+		@include font-size($fh-font-size);
+	}
+}
+
+label {
+	display: block;
+	position: relative;
+}
+
+/** 
+ * Input & Textarea
+ */
+
+// Fields with standard width
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+input[type="file"],
+select,
+textarea {
+	background-color: $fh-input-bg-color;
+	border: $fh-border;
+	border-radius: $fh-border-radius;
+	padding: $fh-input-padding;
+	width: $fh-input-width;
+}
+
+// Fields with standard height
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list] {
+	height: $fh-input-height;
+	-webkit-appearance: none;
+}
+
+// Other
+textarea {
+	overflow: auto;
+	-webkit-appearance: none;
+}
+
+input[type="range"] {
+	height: $fh-input-height;
+	width: $fh-input-width;
+}
+
+input[type="file"] {
+	min-height: $fh-input-height;
+}
+
+input[type="search"] {
+	height: $fh-input-height;
+	-webkit-appearance: none;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+// Select
+select {
+	height: $fh-input-height;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	line-height: 1.15;
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+select[multiple] {
+	height: auto;
+	min-height: $fh-input-height;
+	padding: 0;
+
+	option {
+		margin: 0;
+		padding: $fh-input-padding;
+	}
+}
+
+// Fieldset
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+legend {
+	font-weight: inherit;
+	padding: 0;
+}
+
+// Placeholders
+::-webkit-input-placeholder {
+  color: $fh-font-color;
+}
+::-moz-placeholder { 
+  color: $fh-font-color;
+}
+:-ms-input-placeholder { 
+  color: $fh-font-color;
+}
+
+// States
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+	cursor: not-allowed;
+}
+
+input:focus,
+textarea:focus {
+	background-color: $fh-input-bg-color-focus;
+	border: $fh-border-focus;
+}
+
+input,
+textarea,
+select {
+
+	&[aria-invalid="true"] {
+			border: $fn-border-error;
+	}
+	
+}
+
+/** 
+ * Restyle default here
+ */
