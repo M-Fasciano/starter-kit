@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "array-callback-return": 0,
+    "no-console": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "indent": ["error", 2],
+    "class-methods-use-this": 0
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "$": false,
+    "conditionizr": false,
+    "Hamster": false,
+    "lozad": false,
+    "cheet": false
+  }
+}
