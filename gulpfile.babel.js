@@ -10,6 +10,7 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import webpack from 'webpack-stream';
 
 // gulp specific modules
+import connect from 'gulp-connect';
 import eslint from 'gulp-eslint';
 import gutil from 'gulp-util';
 import imagemin from 'gulp-imagemin';
@@ -49,10 +50,18 @@ const paths = {
         src: `${APP_DIR}/fonts/`,
         dist: `${DIST_DIR}/fonts/`,
     },
-    templates: {
-        src: './templates',
+    html: {
+        src: `${APP_DIR}/*.html`,
+        dist: `${DIST_DIR}/`,
     },
 };
+
+gulp.task('connect', () => {
+    connect.server({
+        root: DIST_DIR,
+        livereload: true,
+    });
+});
 
 // -------------------------------------------------------------------------
 // [Clean]
@@ -62,6 +71,31 @@ gulp.task('clean', () => {
     return del(DIST_DIR).then((allPaths) => {
         console.log('Deleted files and folders:\n', allPaths.join('\n'));
     });
+});
+
+// -------------------------------------------------------------------------
+// [Html]
+// - Update html page
+// -------------------------------------------------------------------------
+gulp.task('html', () => {
+    gulp.src(`${paths.html.src}`)
+        .pipe(plumber({
+            errorHandler: (err) => {
+                notify.onError({
+                    title: 'Style Task error',
+                    message: '<%= error.message %>',
+                    sound: 'Sosumi',
+                    onLast: true,
+                })(err);
+                this.emit('end');
+            },
+        }))
+        .pipe(gulp.dest(paths.html.dist))
+        .pipe(connect.reload())
+        .pipe(notify({
+            message: 'Html task complete',
+            onLast: true,
+        }));
 });
 
 // ------------------------------------------------------------------------
@@ -99,6 +133,7 @@ gulp.task('styles', () => {
         .pipe(rename('main.min.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dist))
+        .pipe(connect.reload())
         .pipe(notify({
             message: 'Styles task complete',
             onLast: true,
@@ -139,6 +174,7 @@ gulp.task('scripts', () => {
             },
         }))
         .pipe(gulp.dest(paths.scripts.dist))
+        .pipe(connect.reload())
         .pipe(notify({
             message: 'Scripts task complete',
             onLast: true,
@@ -214,12 +250,12 @@ gulp.task('watch', () => {
     // Font changes
     gulp.watch([`${paths.fonts.src}**/*`], ['fonts']);
 
-    // Watch any files in dist/, reload on change
-    // gulp.watch([`${DIST_DIR}/**.*`, `${paths.templates.src}/**.*`], browserSync.reload);
+    // Html changes
+    gulp.watch([`${paths.html.src}`], ['html']);
 });
 
 //  Default Task
-gulp.task('default', sequence('clean', ['scripts', 'styles', 'images', 'fonts'], 'watch'));
+gulp.task('default', sequence('clean', ['scripts', 'styles', 'images', 'fonts', 'html'], 'connect', 'watch'));
 
 //  Production/Deployment task
 gulp.task('deploy-prod', sequence('clean', ['scripts', 'styles', 'images', 'fonts']));

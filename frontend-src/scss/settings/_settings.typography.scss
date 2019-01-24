@@ -4,35 +4,35 @@
 // Users/michelefasciano/Collective/hyundai_content_hub/packages/pagekit/theme-one/fonts/hyundaisanshead-medium-webfont.ttf
 
 //	Font stack
-@font-face {
-	font-family: 'hyundaisanshead';
-	src: local('hyundaisanshead'),
-		url('../fonts/hyundaisanshead-regular-webfont.woff2') format('woff2'),
-		url('../fonts/hyundaisanshead-regular-webfont.woff') format('woff'),
-		url('../fonts/hyundaisanshead-regular-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'hyundaisanshead';
+// 	src: local('hyundaisanshead'),
+// 		url('../fonts/hyundaisanshead-regular-webfont.woff2') format('woff2'),
+// 		url('../fonts/hyundaisanshead-regular-webfont.woff') format('woff'),
+// 		url('../fonts/hyundaisanshead-regular-webfont.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
 
-@font-face {
-	font-family: 'hyundaisanshead-medium';
-	src: local('hyundaisanshead-medium'),
-		url('../fonts/hyundaisanshead-medium-webfont.woff2') format('woff2'),
-		url('../fonts/hyundaisanshead-medium-webfont.woff') format('woff'),
-		url('../fonts/hyundaisanshead-medium-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'hyundaisanshead-medium';
+// 	src: local('hyundaisanshead-medium'),
+// 		url('../fonts/hyundaisanshead-medium-webfont.woff2') format('woff2'),
+// 		url('../fonts/hyundaisanshead-medium-webfont.woff') format('woff'),
+// 		url('../fonts/hyundaisanshead-medium-webfont.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
 
-@font-face {
-	font-family: 'hyundaisanshead-light';
-	src: local('hyundaisanshead-light'),
-		url('../fonts/hyundaisanshead-light-webfont.woff2') format('woff2'),
-		url('../fonts/hyundaisanshead-light-webfont.woff') format('woff'),
-		url('../fonts/hyundaisanshead-light-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+// @font-face {
+// 	font-family: 'hyundaisanshead-light';
+// 	src: local('hyundaisanshead-light'),
+// 		url('../fonts/hyundaisanshead-light-webfont.woff2') format('woff2'),
+// 		url('../fonts/hyundaisanshead-light-webfont.woff') format('woff'),
+// 		url('../fonts/hyundaisanshead-light-webfont.ttf') format('truetype');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
 
 //	Font families
 $font-fallback: 'Helvetica', Arial , sans-serif;
