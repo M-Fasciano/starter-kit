@@ -42,6 +42,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "gulp": "^3.9.1",
+    "gulp-connect": "^5.7.0",
     "gulp-eslint": "^5.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-newer": "^1.4.0",
