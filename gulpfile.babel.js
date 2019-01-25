@@ -44,6 +44,7 @@ const paths = {
     },
     images: {
         src: `${APP_DIR}/images/`,
+        photo: [`${APP_DIR}/images/*.jpg`, `${APP_DIR}/images/**/*.png`, `${APP_DIR}/images/**/*.svg`],
         dist: `${DIST_DIR}/images/`,
     },
     fonts: {
@@ -206,7 +207,7 @@ gulp.task('images', () => {
             },
         }))
         .pipe(newer(paths.images.dist))
-        .pipe(imagemin([], { progressive: true }))
+        .pipe(imagemin({ progressive: true }))
         .pipe(gulp.dest(paths.images.dist))
         .pipe(notify({
             message: 'Images task complete',
