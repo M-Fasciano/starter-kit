@@ -1,0 +1,105 @@
+/* ==========================================================================
+   #BANNER
+   ========================================================================== */
+
+//  Ensure these settings are configured before the @import of this file.
+$banner-spacing: ( 
+  default: $base-spacing-unit,
+  medium: 30px, 
+  large: 48px, 
+  x-large: 68px, 
+  xx-large: 80px, 
+  huge : 100px
+);
+
+.o-banner {
+  display: block;
+  padding: {
+    top: rem-calc(round(map-get($banner-spacing, default) / 2));
+    bottom: rem-calc(round(map-get($banner-spacing, default) / 2));
+  }
+  @include tablet {
+    padding: {
+      top: rem-calc(map-get($banner-spacing, default));
+      bottom: rem-calc(map-get($banner-spacing, default));
+    }
+  }
+
+  &--spaced-none {
+    padding: {
+      top: 0;
+      bottom: 0;
+    }
+    @include tablet {
+      padding: {
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &--spaced-md {
+    padding: {
+      top: rem-calc(round(map-get($banner-spacing, medium) / 2));
+      bottom: rem-calc(round(map-get($banner-spacing, medium) / 2));
+    }
+    @include tablet {
+      padding: {
+        top: rem-calc(map-get($banner-spacing, medium));
+        bottom: rem-calc(map-get($banner-spacing, medium));
+      }
+    }
+  }
+
+  &--spaced-lrg {
+    padding: {
+      top: rem-calc(round(map-get($banner-spacing, large) / 2));
+      bottom: rem-calc(round(map-get($banner-spacing, large) / 2));
+    }
+    @include tablet {
+      padding: {
+        top: rem-calc(map-get($banner-spacing, large));
+        bottom: rem-calc(map-get($banner-spacing, large));
+      }
+    }
+  }
+
+  &--spaced-x-lrg {
+    padding: {
+      top: rem-calc(round(map-get($banner-spacing, x-large) / 2));
+      bottom: rem-calc(round(map-get($banner-spacing, x-large) / 2));
+    }
+    @include tablet {
+      padding: {
+        top: rem-calc(map-get($banner-spacing, x-large));
+        bottom: rem-calc(map-get($banner-spacing, x-large));
+      }
+    }
+  }
+
+  &--spaced-xx-lrg {
+    padding: {
+      top: rem-calc(round(map-get($banner-spacing, xx-large) / 2));
+      bottom: rem-calc(round(map-get($banner-spacing, xx-large) / 2));
+    }
+    @include tablet {
+      padding: {
+        top: rem-calc(map-get($banner-spacing, xx-large));
+        bottom: rem-calc(map-get($banner-spacing, xx-large));
+      }
+    }
+  }
+
+  &--spaced-huge {
+    padding: {
+      top: rem-calc(round(map-get($banner-spacing, huge) / 2));
+      bottom: rem-calc(round(map-get($banner-spacing, huge) / 2));
+    }
+    @include tablet {
+      padding: {
+        top: rem-calc(map-get($banner-spacing, huge));
+        bottom: rem-calc(map-get($banner-spacing, huge));
+      }
+    }
+  }
+}

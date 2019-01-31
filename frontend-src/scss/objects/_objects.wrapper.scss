@@ -1,50 +1,53 @@
-/*------------------------------------
-    #WRAPPER
--------------------------------------*/
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
 
 //  Ensure these settings are configured before the @import of this file.
+$wrapper-max-widths: (
+    default: 1040px,
+    narrow:  760px,
+    wide:    1200px
+);
 
 .o-wrapper {
-    background-repeat: no-repeat, no-repeat;
-    background-size: 80%, 80%;
-    background-attachment: fixed;
-    background-position: top 15% right -75%, top 65% left -75%;
-    margin: 60px auto 0;
-    overflow: hidden;
-    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: map-get($wrapper-max-widths, default);
+    padding: {
+        left: rem-calc($base-spacing-unit);
+        right: rem-calc($base-spacing-unit);
+    }
     width: 100%;
+}
 
-    @include tablet {
-        background-position: top -25% right -75%, top 75% left -75%; 
-    }
+/* STYLE VARIANTS
+   ========================================================================== */
+.o-wrapper--fw {
+	max-width: none;
+}
 
-    @include desktop {
-        background-position: top -150% right -25%, top 300% left -25%;
-        background-size: 65%, 65%;
-    }
+.o-wrapper--narrow {
+	max-width: map-get($wrapper-max-widths, narrow);
+}
 
-    @include desktop-medium {
-        background-position: top 300% right -60%, top -150% left -60%;
-        background-size: 75%, 75%;
-    }
-    
-    @include desktop-xlarge {
-        background-position: top 50% right -60%, top -150% left -60%;
-    }
+.o-wrapper--wide {
+	max-width: map-get($wrapper-max-widths, wide);
+}
 
-    &--purple {
-        background-image: url('../images/rectangle-purple.svg'), url('../images/rectangle-purple.svg');
+.o-wrapper--left-align {
+	margin: {
+        left: 0;
+        right: 0;
     }
+}
 
-    &--blue {    
-        background-image: url('../images/rectangle-blue.svg'), url('../images/rectangle-blue.svg');
+.o-wrapper--no-pad {
+	padding: {
+        left: 0;
+        right: 0;
     }
+}
 
-    &--yellow {
-        background-image: url('../images/rectangle-yellow.svg'), url('../images/rectangle-yellow.svg');
-    }
-
-    &--green {
-        background-image: url('../images/rectangle.svg'), url('../images/rectangle.svg');
-    }
+.o-wrapper--text-center {
+	text-align: center;
 }

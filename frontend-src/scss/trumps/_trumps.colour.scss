@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #COLOUR
+   ========================================================================== */
+
+/* TEXT COLOUR 
+   ========================================================================== */
+
+// Whites
+.u-colour-alpha   { color: $colour-one } // WHITE
+.u-colour-beta    { color: $colour-two } // OFF-WHITE
+// Blacks
+.u-colour-gamma   { color: $colour-three } // BLACK
+.u-colour-delta   { color: $colour-four } // NEAR-BLACK
+// Greys
+.u-colour-epsilon { color: $colour-five } // LIGHT GREY/BIEGE
+.u-colour-zeta    { color: $colour-six } // MEDIUM GREY
+.u-colour-eta     { color: $colour-seven } // DARK GREY
+// Brand colours
+.u-colour-theta   { color: $colour-eight } // PASTEL BLUE
+.u-colour-iota    { color: $colour-nine } // PURPLE
+.u-colour-kappa   { color: $colour-ten } // LILAC
+.u-colour-lambda  { color: $colour-eleven } // PISTACHIO
+.u-colour-mu      { color: $colour-twelve } // ELECTRIC BLUE
+
+/* BG COLOUR
+   ========================================================================== */
+
+// Whites
+.u-bg-alpha   { background-color: $colour-one } // WHITE
+.u-bg-beta    { background-color: $colour-two } // OFF-WHITE
+// Blacks
+.u-bg-gamma   { background-color: $colour-three } // BLACK
+.u-bg-delta   { background-color: $colour-four } // NEAR-BLACK
+// Greys
+.u-bg-epsilon { background-color: $colour-five } // LIGHT GREY/BIEGE
+.u-bg-zeta    { background-color: $colour-six } // MEDIUM GREY
+.u-bg-eta     { background-color: $colour-seven } // DARK GREY
+// Brand colours
+.u-bg-theta   { background-color: $colour-eight } // PASTEL BLUE
+.u-bg-iota    { background-color: $colour-nine } // PURPLE
+.u-bg-kappa   { background-color: $colour-ten } // LILAC
+.u-bg-lambda  { background-color: $colour-eleven } // PISTACHIO
+.u-bg-mu      { background-color: $colour-twelve } // ELECTRIC BLUE

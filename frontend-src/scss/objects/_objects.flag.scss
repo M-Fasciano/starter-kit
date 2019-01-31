@@ -1,0 +1,51 @@
+/* ==========================================================================
+   #FLAG
+   ========================================================================== */
+
+//  Ensure these settings are configured before the @import of this file.
+$flag-image-padding: 10px !default;
+/**
+ *  The Pack object forces an arbitrary number of elements to pack up
+ *  horizontally into the space available in their parent.
+ *
+ *  Example usage:
+ *
+ *  <div class="o-flag">
+ *      <div class="[ o-flag__item o-flag__image ]">
+ *          <img src="" alt="">
+ *      </div>
+ *      <div class="[ o-flag__item o-flag__item--align-top o-flag__body ]">
+ *          <p></p>
+ *      </div>
+ *  </div>
+ */
+
+.o-flag {
+  display: table;
+  width: 100%;
+
+  &__item {
+    display: table-cell;
+    vertical-align: middle;
+
+    &--align-top {
+      vertical-align: top;
+    }
+
+    &--align-btm {
+      vertical-align: bottom;
+    }
+  }
+
+  &__image {
+    padding-right: $flag-image-padding;
+    >img {
+      display: block;
+      max-width: none;
+    }
+  }
+
+  &__body {
+    width: 100%;
+  }   
+}

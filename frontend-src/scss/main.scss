@@ -27,6 +27,13 @@
  *
  * 	OBJECTS:
  *	Accordian............Basic structure for JS-enabled accordion
+ *  Banner...............Simple vertically padded content wrapper
+ *  Centered-media.......Simple centered, full-width style (intended for video/img)
+ *	Flag.................Media object modified to enable alternative alignment
+ *  Flex-media...........Responsive asepct-ratio-maintaining media object
+ * 	Grid.................Simple Layout abstraction tool
+ *	Pack.................Layout items in table, packing children to fill available space of parent
+ *	Shuffle..............Re-order elements when layout is linear - 'content choreography' - using flexbox
  *  Wrapper..............Site-wide wrapper for centered content
  *
  *
@@ -34,7 +41,11 @@
  *  btn..................Site-wide button styles
  *
  * 	TRUMPS:
- *	Show-hide............Utilities for classes for showing or hiding content
+ * 	Colour...............Utilities for altering BG and font colour
+ * 	Display..............Utilities for altering block/inline-block/inline display
+ *	Events...............Utilities for controlling user interaction
+ *	Show-hide............Utilities for showing or hiding content
+ *  Spacing..............Utilities for manipulating vertical measure
  *	Typography...........Utilities for manipulating type
  *
  *	HTML linting:
@@ -62,10 +73,24 @@
 
 
 @import "objects/objects.accordian";
+@import "objects/objects.banner";
+@import "objects/objects.centered-media";
+@import "objects/objects.flag";
+@import "objects/objects.flex-media";
+@import "objects/objects.grid";
+@import "objects/objects.pack";
+@import "objects/objects.shuffle";
 @import "objects/objects.wrapper";
 
 
 @import "components/components.test";
 
 
+@import "trumps/trumps.colour";
+@import "trumps/trumps.display";
+@import "trumps/trumps.events";
+@import "trumps/trumps.padding";
 @import "trumps/trumps.show-hide";
+@import "trumps/trumps.spacing";
+@import "trumps/trumps.typography";
+

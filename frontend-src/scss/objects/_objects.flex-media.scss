@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #FLEX-MEDIA
+   ========================================================================== */
+
+//  Ensure these settings are configured before the @import of this file.
+$aspectRatios: ( 21/9: 42.85%, 16/9: 56.25%, 4/3 : 75%);
+// 1. Default aspect ration is 16:9
+/**
+ * 1. Using a pseudo-element to achieve the responsive 
+ *    aspect ratio trick, since we want the width of 'o-flex-media' to be 
+ *    determined by the layout (i.e. not necessarily always 100% of the container).
+ *    See: http://ramenhog.com/blog/2017/05/09/experiments-in-fixed-aspect-ratios
+ *
+ * 2. Aspect ratio is 16:9 (9 / 16 * 100 = padding-bottom %) by default
+ */
+
+.o-flex-media {
+  position: relative;
+  /* [1] */
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: map-get($aspectRatios, 16/9);
+    /* [2] */
+  }
+  >&__item,
+  >iframe {
+    border: 0;
+    @include cover;
+  }
+
+  &--fw {
+    width: 100%;
+  }
+}

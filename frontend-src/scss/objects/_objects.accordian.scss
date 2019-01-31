@@ -5,7 +5,7 @@
 .o-accordion-header {
     display: flex;
     justify-content: space-between;
-    font-family: $font-hyundai-medium;
+    font-family: $font-fallback-medium;
     @include font-size(18px, 22px);
     cursor: pointer;
     padding: 15px 0;

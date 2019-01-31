@@ -1,0 +1,48 @@
+/* ==========================================================================
+   #PACK
+   ========================================================================== */
+
+/**
+ *  The Pack object forces an arbitrary number of elements to pack up
+ *  horizontally into the space available in their parent.
+ *
+ *  Example usage:
+ *
+ *  <div class="o-tb">
+ *    <div class="o-tb__item">
+ *      ...
+ *    </div>
+ *    <div class="[ o-tb__item o-tb__item--full ]">
+ *      ...
+ *    </div>
+ *    <div class="o-tb__item">
+ *      ...
+ *    </div>
+ *  </div>
+ *
+ *  [1] - This is where the magic happens.
+ */
+.o-pack {
+  display: table; /* [1] */
+  list-style: none;
+  margin:  0;
+  padding: 0;
+  width: 100%;
+
+  &__item {
+    display: table-cell; /* [1] */
+
+    /**
+    *  Force one item to take up 100% of the space
+    *  Cannot be used within `.o-tb--equal` parents
+    */
+    &--full {
+      width: 100%;
+    }
+  }
+
+  //  Force all packed items to occupy the same amount of space as each other
+  &--equal {
+    table-layout: fixed;
+  }
+}
