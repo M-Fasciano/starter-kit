@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+
+/**
+ * 	General helper classes for controlling display
+ *
+ * 	These are the basic classes you might need to apply to typical HTML content.
+ * 	If you find yourself needing something like `table`, `table-cell` etc., 
+ *  then you probably need a more complex object and shouldn't be using
+ * 	utility classes.
+ */
+.u-display-f  { display: flex }
+.u-display-b  { display: block }
+.u-display-i  { display: inline }
+.u-display-ib { display: inline-block }
+
+.u-display-f-\@sml  { @include phablet { display: flex } }
+.u-display-b-\@sml  { @include phablet { display: block } }
+.u-display-i-\@sml  { @include phablet { display: inline } }
+.u-display-ib-\@sml { @include phablet { display: inline-block } }
+
+.u-display-f-\@md   { @include tablet { display: flex } }
+.u-display-b-\@md   { @include tablet { display: block } }
+.u-display-i-\@md   { @include tablet { display: inline } }
+.u-display-ib-\@md  { @include tablet { display: inline-block } }
+
+.u-display-f-\@lrg  { @include desktop { display: flex } }
+.u-display-b-\@lrg  { @include desktop { display: block } }
+.u-display-i-\@lrg  { @include desktop { display: inline } }
+.u-display-ib-\@lrg { @include desktop { display: inline-block } }
+
+
+
+
+

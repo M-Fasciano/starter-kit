@@ -1,0 +1,64 @@
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+
+//  Ensure these settings are configured before the @import of this file.
+$spacing-class-limit: 200;
+/**
+ * Because the spacing/vertical measure across the site is very variable,
+ * we're giving ourselves flexibility by adopting an almost
+ * atomic-css approach. We're using uncss (tree-shaking) as part of
+ * our production build process, to ensure only those selectors utilised
+ * in the markup are served up in the stylesheet. This, along with the fact that
+ * the Gzip compression algorithm favours repetition in strings, means that
+ * the enourmous number of classes generated here doesn't matter.
+ *
+ * The following loop generates spacing classes with 1px increments
+ * E.g. .u-spaced-1, .u-spaced-2, .u-spaced-3 etc, where the number corresponds
+ * to the bottom margin in px.
+ */
+
+@for $i from 0 through $spacing-class-limit {
+  .u-spaced-#{$i} {
+    // $i * 1px ensures arguemnt passed is a px number and not a string
+    margin-bottom: rem-calc($i * 1px);
+  }
+}
+
+@for $i from 0 through $spacing-class-limit {
+  .u-spaced-#{$i}--top {
+    // $i * 1px ensures arguemnt passed is a px number and not a string
+    margin-top: rem-calc($i * 1px);
+  }
+}
+
+@for $i from 0 through $spacing-class-limit {
+  .u-spaced-#{$i}--negative {
+    // $i * 1px ensures arguemnt passed is a px number and not a string
+    margin-top: - rem-calc($i * 1px);
+  }
+}
+
+@for $i from 0 through $spacing-class-limit {
+  .u-spaced-#{$i}-\@sml {
+    @include phablet {
+      margin-bottom: rem-calc($i * 1px);
+    }
+  }
+}
+
+@for $i from 0 through $spacing-class-limit {
+  .u-spaced-#{$i}-\@md {
+    @include tablet {
+      margin-bottom: rem-calc($i * 1px);
+    }
+  }
+}
+
+@for $i from 0 through $spacing-class-limit {
+  .u-spaced-#{$i}-\@lrg {
+    @include desktop {
+      margin-bottom: rem-calc($i * 1px);
+    }
+  }
+}

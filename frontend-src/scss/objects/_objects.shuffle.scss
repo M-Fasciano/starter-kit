@@ -1,0 +1,56 @@
+/* ==========================================================================
+   #SHUFFLE
+   ========================================================================== */
+
+/**
+ *  The shuffle object modifies the order of elements when the layout
+ *  is linear (i.e. at mobile), placing each child in the order specified 
+ *  by the index appended to the class. 
+ *
+ *  Example usage:
+ *
+ *  <div class="o-shuffle">
+ *    <!-- elem comes second when layout is linear -->  
+ *    <div class="o-shuffle__item-2">
+ *      ...
+ *    </div>
+
+ *    <!-- elem comes first when layout is linear -->  
+ *    <div class="o-shuffle__item-1">
+ *      ...
+ *    </div>
+ *  </div>
+ */
+
+/**
+ * Number of classes generated with format 
+ * .o-shuffle__item-1...2,3 etc. 
+ */
+$maximum-child-length: 10 !default;
+
+.o-shuffle {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+/**
+ * Here we set a limit to 10, which emits classes in the css:
+ * .o-shuffle__item-1 through to .o-shuffle__item-10.
+ *
+ * If you're dealing with more than 10 childNodes, then modify
+ * this number
+ */
+@for $i from 1 through $maximum-child-length {
+  .o-shuffle__item-#{$i} {
+    order: $i;
+
+    // Reset the order when layout is no longer linear
+    @include tablet {
+      order: 0;
+    }
+  }
+}

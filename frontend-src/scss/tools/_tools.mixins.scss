@@ -361,3 +361,15 @@
         width: 2px;
     }
 }
+
+/**
+ * 1. Ensure any childNodes of <h> tags get 'italic' style over the
+ *    parentNode's 'normal'
+ */
+@mixin font-italic {
+    font: {
+        family: $font-fallback-serif;
+        style: italic; /* [1] */
+        weight: 400;
+    }
+}

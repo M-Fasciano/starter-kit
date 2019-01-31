@@ -1,6 +1,6 @@
-/*------------------------------------
-    #SHOW-HIDE
--------------------------------------*/
+/* ==========================================================================
+   #SHOW-HIDE
+   ========================================================================== */
 
 /**
  *	Hide only visually, but have it available for screen readers:
@@ -20,4 +20,41 @@
     position: absolute;
     width: 1px;
     white-space: nowrap; /* [1] */
+}
+
+//	Hide/show content at responsive breakpoints
+.u-hide {
+	display: none
+}
+
+.u-hide-\@sml { @include phablet { display: none } }
+
+.u-hide-\@md { @include tablet { display: none } }
+
+.u-hide-\@lrg { @include desktop { display: none } }
+
+.u-show { display: inline-block }
+
+.u-show-\@sml {
+	display: none;
+
+	@include phablet { display: inline-block }
+}
+
+.u-show-\@md {
+	display: none;
+
+	@include tablet { display: inline-block }
+}
+
+.u-show-\@md--block {
+	display: none;
+
+	@include tablet { display: block }
+}
+
+.u-show-\@lrg {
+	display: none;
+
+	@include desktop { display: inline-block }
 }
