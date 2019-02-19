@@ -12,6 +12,35 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="/css/main.min.css">
+  <style>
+    #map {
+      width: 1000px;
+      height: 750px;
+      background-color: grey;
+    }
+    .button {
+      background-color: #00aad2;
+      border-radius: 0;
+      color: #fff;
+      display: inline-block;
+      height: 50px;
+      padding: .9375rem 1.25rem .875rem;
+      text-align: center;
+      transition: background-color .4s ease;
+      vertical-align: top;
+      font-size: 14px;
+      font-size: .875rem;
+      line-height: 1em;
+    }
+    .button:disabled {
+      cursor: not-allowed;
+    }
+    .input[type=text] {
+      border-radius: 0;
+      display: inline-block;
+      width: 200px;
+    }
+  </style>
 </head>
 <body>
   <!--[if lte IE 9]>
@@ -19,13 +48,25 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <!--<p>Hello world! This is HTML5 Boilerplate.</p>
 
   <img src="/images/ballon.jpeg" alt="">
   <img src="/images/beach.jpeg" alt="">
   <img src="/images/camp.jpeg" alt="">
-  <img src="/images/mountain.jpeg" alt="">
-  
+  <img src="/images/mountain.jpeg" alt="">-->
+
+  <h3>My Google Maps Demo</h3>
+
+  <input id="search_input" type="text" class="input">
+  <button id="search" class="button" disabled="disabled">Search</button>
+  <input id="latitude" type="text" value="" hidden>
+  <input id="longitude" type="text" value="" hidden>
+  <div id="distance"></div>
+
+  <!--The div element for the map -->
+  <div id="map"></div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="/js/main.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8iqiPX7aOHZPetbiOboqCwwg7KV691Lk&callback=initMap"></script>
 </body>
 </html>
