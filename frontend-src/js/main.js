@@ -1,3 +1,8 @@
-import test from './ui/test';
+import { disableSearch } from './helpers/helpers';
+import map from './ui/map';
 
-test();
+document.addEventListener('DOMContentLoaded', () => {
+  // init functions
+  disableSearch();
+  map();
+});
