@@ -18,6 +18,51 @@
       height: 750px;
       background-color: grey;
     }
+    .map-wrapper {
+      position: relative;
+      height: 750px;
+      width: 1000px;
+    }
+    .modal {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #888;
+      width: 70%;
+    }
+
+    .modal-content p {
+      margin-bottom: 0;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 18px;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
     .button {
       background-color: #00aad2;
       border-radius: 0;
@@ -64,7 +109,16 @@
   <div id="distance"></div>
 
   <!--The div element for the map -->
-  <div id="map"></div>
+  <div class="map-wrapper">
+    <div id="map"></div>
+    <!-- Modal content -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>There are no refuelling stations or servicing dealers near you.</p>
+      </div>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="/js/main.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8iqiPX7aOHZPetbiOboqCwwg7KV691Lk&callback=initMap"></script>
