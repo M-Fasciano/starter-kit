@@ -8,6 +8,8 @@ const googleMap = () => {
   const d = document;
   const mapEl = d.getElementById('map');
   const search = d.getElementById('search');
+  const modal = d.getElementById('modal');
+  const span = d.getElementsByClassName('close')[0];
   const markers = [];
   let bounds;
   let map;
@@ -38,6 +40,14 @@ const googleMap = () => {
     }
     // Reset auto-zoom and auto-center
     bounds = new google.maps.LatLngBounds();
+  };
+
+
+  /*
+   * When the user clicks on <span> (x), close the modal
+   */
+  span.onclick = () => {
+    modal.style.display = 'none';
   };
 
   /*
@@ -157,7 +167,8 @@ const googleMap = () => {
           });
 
           if (count < 1) {
-            alert('There are no refuelling stations or servicing dealers near you.');
+            modal.style.display = 'flex';
+            // alert('There are no refuelling stations or servicing dealers near you.');
           }
 
           /*
