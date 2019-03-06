@@ -94,18 +94,22 @@ const googleMap = () => {
       markers.push(marker);
 
       // Add info name on mouseover
-      google.maps.event.addListener(marker, 'mouseover', (() => {
-        return () => {
-          infowindow.setContent(station.name);
-          infowindow.open(map, marker);
-        };
+      google.maps.event.addListener(marker, 'mouseover', (() => () => {
+        infowindow.setContent(`
+          ${station.name} <br>
+          ${station.address1 ? `${station.address1}<br>` : ''}
+          ${station.address2 ? `${station.address2}<br>` : ''}
+          ${station.address3 ? `${station.address3}<br>` : ''}
+          ${station.postcode} <br>
+          ${station.town} <br>
+          ${station.county}
+        `);
+        infowindow.open(map, marker);
       })(marker));
 
       // Remove info name on mouseout
-      google.maps.event.addListener(marker, 'mouseout', (() => {
-        return () => {
-          infowindow.close();
-        };
+      google.maps.event.addListener(marker, 'mouseout', (() => () => {
+        infowindow.close();
       })(infowindow));
     });
 
@@ -147,18 +151,22 @@ const googleMap = () => {
                 autoZoomCenter(marker);
 
                 // Add info name on mouseover
-                google.maps.event.addListener(marker, 'mouseover', (() => {
-                  return () => {
-                    infowindow.setContent(station.name);
-                    infowindow.open(map, marker);
-                  };
+                google.maps.event.addListener(marker, 'mouseover', (() => () => {
+                  infowindow.setContent(`
+                    ${station.name} <br>
+                    ${station.address1 ? `${station.address1}<br>` : ''}
+                    ${station.address2 ? `${station.address2}<br>` : ''}
+                    ${station.address3 ? `${station.address3}<br>` : ''}
+                    ${station.postcode} <br>
+                    ${station.town} <br>
+                    ${station.county}
+                  `);
+                  infowindow.open(map, marker);
                 })(marker));
 
                 // Remove info name on mouseout
-                google.maps.event.addListener(marker, 'mouseout', (() => {
-                  return () => {
-                    infowindow.close();
-                  };
+                google.maps.event.addListener(marker, 'mouseout', (() => () => {
+                  infowindow.close();
                 })(infowindow));
               }
             };
